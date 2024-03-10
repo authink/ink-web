@@ -1,7 +1,7 @@
 import AppLayout from '@/components/AppLayout'
 import '@/styles/global.css'
 import Head from 'next/head'
-import { ConfigProvider, App, theme } from 'antd';
+import { ConfigProvider, App, theme } from 'antd'
 
 export default function MyApp({ Component, pageProps }) {
   return (
