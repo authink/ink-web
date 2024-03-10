@@ -1,21 +1,18 @@
-import { Layout, theme } from 'antd'
+import { Layout } from 'antd'
 
 const { Content } = Layout
 
 export default function UnloginLayout({ children }) {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken()
-
   return (
-    <Layout
-      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
-    >
+    <Layout>
       <Content
         style={{
-          flex: '1 0 auto',
-          background: colorBgContainer,
-          borderRadius: borderRadiusLG,
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         {children}
