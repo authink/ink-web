@@ -1,9 +1,10 @@
-import AppLayout from '@/components/AppLayout'
 import '@/styles/global.css'
 import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
+import useLayout from '@/components/hooks/useLayout'
 
 export default function MyApp({ Component, pageProps }) {
+  const Layout = useLayout()
   return (
     <ConfigProvider
       theme={{
@@ -11,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
       }}
     >
       <App>
-        <AppLayout>
+        <Layout>
           <Head>
             <meta name="description" content="ink web" />
             <meta
@@ -21,7 +22,7 @@ export default function MyApp({ Component, pageProps }) {
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <Component {...pageProps} />
-        </AppLayout>
+        </Layout>
       </App>
     </ConfigProvider>
   )
