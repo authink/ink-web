@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
 
 export default function MyApp({ Component, pageProps }) {
-  var a
   return (
     <ConfigProvider
       theme={{
