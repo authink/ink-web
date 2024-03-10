@@ -1,8 +1,26 @@
+import useMutation from '@/components/hooks/useMutation'
+import wait from '@/lib/wait'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Checkbox, Form, Input } from 'antd'
+import { Button, Checkbox, Form, Input, message } from 'antd'
+import useToken from '@/components/hooks/useToken'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+
+const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
+const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
 
 const Login = () => {
+  const router = useRouter()
+  const token = useToken()
+  const {
+    trigger: grantToken,
+    isMutating,
+  } = useMutation({ path: 'token/grant' })
+
+  const [submitting, setSubmitting] = useState(false)
+  const disabled = isMutating || submitting
+
   const validateEmail = (_, value) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     if (!value || regex.test(value)) {
@@ -11,8 +29,24 @@ const Login = () => {
     return Promise.reject('invalid email format')
   }
 
-  const onFinish = (data) => {
-    console.log('Received data of form: ', data)
+  const onFinish = async ({ email, password }) => {
+    setSubmitting(true)
+
+    try {
+      const data = await grantToken({
+        appId,
+        appSecret,
+        email,
+        password,
+      })
+      token.set(data)
+      message.success('Login succeed')
+      await wait(500)
+      router.push('/')
+    } catch (error) {
+      setSubmitting(false)
+      message.error('Login failed')
+    }
   }
 
   return (
@@ -20,16 +54,16 @@ const Login = () => {
       <Head>
         <title>Login</title>
       </Head>
+
       <Form
         name="login"
-        initialValues={{
-          remember: false,
-        }}
+        initialValues={{}}
         style={{
           width: 320,
         }}
         size="large"
         onFinish={onFinish}
+        disabled={disabled}
       >
         <h1 style={{ textAlign: 'center' }}>INK ADMIN</h1>
         <Form.Item
@@ -79,9 +113,12 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+          <Checkbox
+            checked={token.rememberMe}
+            onChange={(e) => token.setRememberMe(e.target.checked)}
+          >
+            Remember me
+          </Checkbox>
 
           <a href="" style={{ float: 'right' }}>
             Forgot password

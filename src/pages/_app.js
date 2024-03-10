@@ -2,6 +2,7 @@ import '@/styles/global.css'
 import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
 import useLayout from '@/components/hooks/useLayout'
+import AppSWRConfig from '@/components/AppSWRConfig'
 
 export default function MyApp({ Component, pageProps }) {
   const Layout = useLayout()
@@ -21,7 +22,9 @@ export default function MyApp({ Component, pageProps }) {
             />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <Component {...pageProps} />
+          <AppSWRConfig>
+            <Component {...pageProps} />
+          </AppSWRConfig>
         </Layout>
       </App>
     </ConfigProvider>
