@@ -13,13 +13,10 @@ const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
 const Login = () => {
   const router = useRouter()
   const token = useToken()
-  const {
-    trigger: grantToken,
-    isMutating,
-  } = useMutation({ path: 'token/grant' })
-
-  const [submitting, setSubmitting] = useState(false)
-  const disabled = isMutating || submitting
+  const [disabled, setDisabled] = useState()
+  const { trigger: grantToken, isMutating } = useMutation({
+    path: 'token/grant',
+  })
 
   const validateEmail = (_, value) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -30,8 +27,6 @@ const Login = () => {
   }
 
   const onFinish = async ({ email, password }) => {
-    setSubmitting(true)
-
     try {
       const data = await grantToken({
         appId,
@@ -39,12 +34,12 @@ const Login = () => {
         email,
         password,
       })
+      setDisabled(true)
       token.set(data)
       message.success('Login succeed')
       await wait(500)
       router.push('/')
     } catch (error) {
-      setSubmitting(false)
       message.error('Login failed')
     }
   }
@@ -63,7 +58,7 @@ const Login = () => {
         }}
         size="large"
         onFinish={onFinish}
-        disabled={disabled}
+        disabled={isMutating || disabled}
       >
         <h1 style={{ textAlign: 'center' }}>INK ADMIN</h1>
         <Form.Item
