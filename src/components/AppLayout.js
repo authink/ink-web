@@ -15,6 +15,7 @@ const AppLayout = ({ children }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken()
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
