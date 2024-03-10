@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Ink Web</title>
+        <title>Admin</title>
       </Head>
 
       <div>

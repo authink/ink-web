@@ -1,5 +1,6 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input } from 'antd'
+import Head from 'next/head'
 
 const Login = () => {
   const validateEmail = (_, value) => {
@@ -15,80 +16,85 @@ const Login = () => {
   }
 
   return (
-    <Form
-      name="login"
-      initialValues={{
-        remember: false,
-      }}
-      style={{
-        width: 320,
-      }}
-      size="large"
-      onFinish={onFinish}
-    >
-      <h1 style={{ textAlign: 'center' }}>INK ADMIN</h1>
-      <Form.Item
-        name="email"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your email!',
-          },
-          {
-            validator: validateEmail,
-          },
-        ]}
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
+      <Form
+        name="login"
+        initialValues={{
+          remember: false,
+        }}
+        style={{
+          width: 320,
+        }}
+        size="large"
+        onFinish={onFinish}
       >
-        <Input
-          prefix={
-            <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
-              <UserOutlined />
-            </span>
-          }
-          placeholder="Email"
-          allowClear
-        />
-      </Form.Item>
-
-      <Form.Item
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Password!',
-          },
-          {
-            min: 5,
-            message: 'Password length can not be less than 5',
-          },
-        ]}
-      >
-        <Input.Password
-          prefix={
-            <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
-              <LockOutlined />
-            </span>
-          }
-          placeholder="Password"
-        />
-      </Form.Item>
-
-      <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
+        <h1 style={{ textAlign: 'center' }}>INK ADMIN</h1>
+        <Form.Item
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your email!',
+            },
+            {
+              validator: validateEmail,
+            },
+          ]}
+        >
+          <Input
+            prefix={
+              <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
+                <UserOutlined />
+              </span>
+            }
+            placeholder="Email"
+            allowClear
+          />
         </Form.Item>
 
-        <a href="" style={{ float: 'right' }}>
-          Forgot password
-        </a>
-      </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Password!',
+            },
+            {
+              min: 5,
+              message: 'Password length can not be less than 5',
+            },
+          ]}
+        >
+          <Input.Password
+            prefix={
+              <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
+                <LockOutlined />
+              </span>
+            }
+            placeholder="Password"
+          />
+        </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
-          Log in
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          <a href="" style={{ float: 'right' }}>
+            Forgot password
+          </a>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+            Log in
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   )
 }
 

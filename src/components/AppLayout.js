@@ -6,7 +6,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons'
-import { Layout, Menu, Button, theme } from 'antd'
+import { Layout, Menu, Button, Typography, theme } from 'antd'
 
 const { Header, Sider, Content, Footer } = Layout
 
@@ -19,14 +19,19 @@ const AppLayout = ({ children }) => {
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div
+        <Typography.Title
+          level={3}
           style={{
+            color: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             height: 32,
             margin: 16,
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            borderRadius: 6,
           }}
-        />
+        >
+          INK
+        </Typography.Title>
         <Menu
           theme="dark"
           mode="inline"
