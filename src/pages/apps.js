@@ -2,19 +2,44 @@ import useQuery from '@/components/hooks/useQuery'
 import immediate from '@/lib/immediate'
 import staticProps from '@/lib/staticProps'
 import { App, Table } from 'antd'
-import { Spin } from 'antd'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
+import Loading from '@/components/Loading'
+import Active from '@/components/Active'
 
 export default function Apps() {
   const t = useTranslations()
+  const format = useFormatter()
   const { message } = App.useApp()
   const { data, error, isLoading, isValidating } = useQuery({
     path: 'admin/apps',
   })
 
+  if (isLoading || isValidating) {
+    return <Loading />
+  }
+
   if (error) {
     immediate(() => message.error(error.message))
+  }
+
+  const fieldRender = (field) => {
+    switch (field) {
+      case 'active':
+        return Active
+      case 'createdAt':
+      case 'updatedAt':
+        return (value) =>
+          format.dateTime(new Date(value), {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+          })
+      default:
+        return (value) => value
+    }
   }
 
   return (
@@ -23,8 +48,6 @@ export default function Apps() {
         <title>{t('apps')}</title>
       </Head>
 
-      {(isLoading || isValidating) && <Spin size="large" />}
-
       {data && (
         <Table
           columns={['id', 'name', 'active', 'createdAt', 'updatedAt'].map(
@@ -32,6 +55,7 @@ export default function Apps() {
               key: field,
               dataIndex: field,
               title: t(field),
+              render: fieldRender(field),
             }),
           )}
           dataSource={data.map((item, i) => ({

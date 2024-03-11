@@ -2,14 +2,14 @@ import { useRouter } from 'next/router'
 import AppLayout from '../AppLayout'
 import UnloginLayout from '../UnloginLayout'
 
-const unloginRoutes = ['/login']
+const authnRoutes = ['/', '/apps']
 
 export default function useLayout() {
   const router = useRouter()
 
-  if (unloginRoutes.includes(router.pathname)) {
-    return UnloginLayout
-  } else {
+  if (authnRoutes.includes(router.pathname)) {
     return AppLayout
+  } else {
+    return UnloginLayout
   }
 }

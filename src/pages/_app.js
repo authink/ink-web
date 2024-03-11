@@ -1,11 +1,13 @@
+import '@/styles/global.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { useRouter } from 'next/router'
-import '@/styles/global.css'
 import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
 import useLayout from '@/components/hooks/useLayout'
 import AppSWRConfig from '@/components/AppSWRConfig'
 import { useState } from 'react'
+
+const timeZone = process.env.NEXT_PUBLIC_TIME_ZONE
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -18,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <NextIntlClientProvider
       locale={router.locale}
-      timeZone="Asia/Shanghai"
+      timeZone={timeZone}
       messages={pageProps.messages}
     >
       <ConfigProvider
