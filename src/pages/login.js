@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import staticProps from '@/lib/staticProps'
 import copyright from '@/lib/copyright'
+import LocaleSwitcher from '@/components/LocaleSwitcher'
 
 const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
@@ -131,7 +132,15 @@ export default function Login() {
         </Form.Item>
       </Form>
 
-      <div>{copyright()}</div>
+      <LocaleSwitcher />
+
+      <div
+        style={{
+          margin: 12,
+        }}
+      >
+        {copyright()}
+      </div>
     </>
   )
 }
