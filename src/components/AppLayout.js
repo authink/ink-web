@@ -2,9 +2,8 @@ import { useState } from 'react'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  DashboardOutlined,
+  AppstoreOutlined,
   SunOutlined,
   MoonOutlined,
 } from '@ant-design/icons'
@@ -13,10 +12,14 @@ import copyright from '@/lib/copyright'
 import { Flex } from 'antd'
 import { Space } from 'antd'
 import LocaleSwitcher from './LocaleSwitcher'
+import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/router'
 
 const { Header, Sider, Content, Footer } = Layout
 
 const AppLayout = ({ currentTheme, toggleTheme, children }) => {
+  const t = useTranslations('menu')
+  const router = useRouter()
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -41,22 +44,27 @@ const AppLayout = ({ currentTheme, toggleTheme, children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['dashboard']}
+          onClick={(item) => {
+            switch (item.key) {
+              case 'apps':
+                router.push('/apps')
+                return
+              default:
+                router.push('/')
+                return
+            }
+          }}
           items={[
             {
-              key: '1',
-              icon: <UserOutlined />,
-              label: 'nav 1',
+              key: 'dashboard',
+              icon: <DashboardOutlined />,
+              label: t('dashboard'),
             },
             {
-              key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
+              key: 'apps',
+              icon: <AppstoreOutlined />,
+              label: t('apps'),
             },
           ]}
         />
