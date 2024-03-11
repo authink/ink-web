@@ -19,5 +19,5 @@ export default function Dashboard() {
 }
 
 export async function getStaticProps(context) {
-  return staticProps(context, 'dashboard')
+  return staticProps(context.locale, 'dashboard')
 }

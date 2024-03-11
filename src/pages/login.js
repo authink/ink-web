@@ -146,5 +146,5 @@ export default function Login() {
 }
 
 export async function getStaticProps(context) {
-  return staticProps(context, 'login')
+  return staticProps(context.locale, 'login')
 }
