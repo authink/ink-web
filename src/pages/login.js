@@ -1,7 +1,7 @@
 import useMutation from '@/components/hooks/useMutation'
 import wait from '@/lib/wait'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Checkbox, Form, Input, message } from 'antd'
+import { Button, Checkbox, Form, Input, App } from 'antd'
 import useToken from '@/components/hooks/useToken'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -15,6 +15,7 @@ const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
 
 export default function Login() {
+  const { message } = App.useApp()
   const router = useRouter()
   const token = useToken()
   const t = useTranslations()
