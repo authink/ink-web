@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import staticProps from '@/lib/staticProps'
+import copyright from '@/lib/copyright'
 
 const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
@@ -129,6 +130,8 @@ export default function Login() {
           </Button>
         </Form.Item>
       </Form>
+
+      <div>{copyright()}</div>
     </>
   )
 }

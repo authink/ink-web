@@ -7,6 +7,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, Button, Typography, theme } from 'antd'
+import copyright from '@/lib/copyright'
 
 const { Header, Sider, Content, Footer } = Layout
 
@@ -94,7 +95,7 @@ const AppLayout = ({ children }) => {
             textAlign: 'center',
           }}
         >
-          Authink ©{new Date().getFullYear()} Created by huoyijie.cn
+          {copyright()}
         </Footer>
       </Layout>
     </Layout>
