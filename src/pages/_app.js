@@ -5,10 +5,16 @@ import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
 import useLayout from '@/components/hooks/useLayout'
 import AppSWRConfig from '@/components/AppSWRConfig'
+import { useState } from 'react'
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const Layout = useLayout()
+  const [currentTheme, setCurrentTheme] = useState('light')
+  const toggleTheme = () => {
+    setCurrentTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
+  }
+
   return (
     <NextIntlClientProvider
       locale={router.locale}
@@ -17,11 +23,14 @@ export default function MyApp({ Component, pageProps }) {
     >
       <ConfigProvider
         theme={{
-          algorithm: theme.defaultAlgorithm,
+          algorithm:
+            currentTheme === 'dark'
+              ? theme.darkAlgorithm
+              : theme.defaultAlgorithm,
         }}
       >
         <App>
-          <Layout>
+          <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
             <Head>
               <meta name="description" content="Ink Admin" />
               <meta

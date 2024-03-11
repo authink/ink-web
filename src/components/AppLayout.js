@@ -5,13 +5,18 @@ import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
+  SunOutlined,
+  MoonOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, Button, Typography, theme } from 'antd'
 import copyright from '@/lib/copyright'
+import { Flex } from 'antd'
+import { Space } from 'antd'
+import LocaleSwitcher from './LocaleSwitcher'
 
 const { Header, Sider, Content, Footer } = Layout
 
-const AppLayout = ({ children }) => {
+const AppLayout = ({ currentTheme, toggleTheme, children }) => {
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -66,16 +71,34 @@ const AppLayout = ({ children }) => {
             background: colorBgContainer,
           }}
         >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          />
+          <Flex justify="space-between">
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: '16px',
+                width: 64,
+                height: 64,
+              }}
+            />
+
+            <Space style={{ paddingRight: 16 }}>
+              <LocaleSwitcher />
+              <Button
+                type="text"
+                icon={
+                  currentTheme === 'dark' ? <SunOutlined /> : <MoonOutlined />
+                }
+                onClick={toggleTheme}
+                style={{
+                  fontSize: '16px',
+                  width: 64,
+                  height: 64,
+                }}
+              />
+            </Space>
+          </Flex>
         </Header>
 
         <Content
