@@ -1,4 +1,5 @@
 import useQuery from '@/components/hooks/useQuery'
+import immediate from '@/lib/immediate'
 import staticProps from '@/lib/staticProps'
 import { App, Table } from 'antd'
 import { Spin } from 'antd'
@@ -13,7 +14,7 @@ export default function Apps() {
   })
 
   if (error) {
-    message.error(error.message)
+    immediate(() => message.error(error.message))
   }
 
   return (
