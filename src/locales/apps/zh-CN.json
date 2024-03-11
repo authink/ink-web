@@ -1,0 +1,8 @@
+{
+  "apps": "应用管理",
+  "id": "ID",
+  "name": "名称",
+  "active": "状态",
+  "createdAt": "创建时间",
+  "updatedAt": "更新时间"
+}

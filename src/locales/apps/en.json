@@ -1,0 +1,8 @@
+{
+  "apps": "Apps",
+  "id": "ID",
+  "name": "Name",
+  "active": "Active",
+  "createdAt": "CreatedAt",
+  "updatedAt": "UpdatedAt"
+}
