@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import { Button } from 'antd'
+import staticProps from '@/lib/staticProps'
+import { useTranslations } from 'next-intl'
 
-export default function Home() {
+export default function Dashboard() {
+  const t = useTranslations()
   return (
     <>
       <Head>
-        <title>Admin</title>
+        <title>{t('dashboard')}</title>
       </Head>
 
       <div>
@@ -13,4 +16,8 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export async function getStaticProps(context) {
+  return staticProps(context, 'dashboard')
 }

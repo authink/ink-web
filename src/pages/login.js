@@ -6,13 +6,16 @@ import useToken from '@/components/hooks/useToken'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import staticProps from '@/lib/staticProps'
 
 const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
 
-const Login = () => {
+export default function Login() {
   const router = useRouter()
   const token = useToken()
+  const t = useTranslations()
   const [disabled, setDisabled] = useState()
   const { trigger: grantToken, isMutating } = useMutation({
     path: 'token/grant',
@@ -122,7 +125,7 @@ const Login = () => {
 
         <Form.Item>
           <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
-            Log in
+            {t('login')}
           </Button>
         </Form.Item>
       </Form>
@@ -130,4 +133,6 @@ const Login = () => {
   )
 }
 
-export default Login
+export async function getStaticProps(context) {
+  return staticProps(context, 'login')
+}

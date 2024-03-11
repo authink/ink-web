@@ -7,6 +7,10 @@ const nextConfig = {
       destination: 'http://localhost:8080/api/:path*', // Proxy to Backend
     },
   ],
+  i18n: {
+    locales: ['en', 'zh-CN'],
+    defaultLocale: 'en',
+  },
 }
 
 export default nextConfig
