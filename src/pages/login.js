@@ -1,5 +1,5 @@
 import useMutation from '@/components/hooks/useMutation'
-import wait from '@/lib/wait'
+import { wait } from '@authink/commonjs'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input, App } from 'antd'
 import useToken from '@/components/hooks/useToken'

@@ -1,5 +1,5 @@
 import useQuery from '@/components/hooks/useQuery'
-import immediate from '@/lib/immediate'
+import { setImmediate } from '@authink/commonjs'
 import staticProps from '@/lib/staticProps'
 import { App, Table } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
@@ -23,7 +23,7 @@ export default function Apps() {
   }
 
   if (error) {
-    immediate(() => message.error(error.message))
+    setImmediate(() => message.error(error.message))
   }
 
   const fieldRender = (field) => {

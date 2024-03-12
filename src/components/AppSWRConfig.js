@@ -1,5 +1,5 @@
-import wait from '@/lib/wait'
-import fetcher from '@/lib/fetcher'
+import { wait } from '@authink/commonjs'
+import { fetcher } from '@authink/commonjs'
 import { useRouter } from 'next/router'
 import { SWRConfig } from 'swr'
 import useToken from './hooks/useToken'

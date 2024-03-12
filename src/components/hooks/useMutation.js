@@ -1,4 +1,4 @@
-import fetcher from '@/lib/fetcher'
+import { fetcher } from '@authink/commonjs'
 import useSWRMutation from 'swr/mutation'
 import useKey from './useKey'
 
