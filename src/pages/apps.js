@@ -4,8 +4,11 @@ import staticProps from '@/lib/staticProps'
 import { App, Table } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
-import Loading from '@/components/Loading'
-import Active from '@/components/Active'
+import { Active, Loading } from '@authink/bottlejs'
+
+function activeRender(value) {
+  return <Active value={value} />
+}
 
 export default function Apps() {
   const t = useTranslations()
@@ -26,7 +29,7 @@ export default function Apps() {
   const fieldRender = (field) => {
     switch (field) {
       case 'active':
-        return Active
+        return activeRender
       case 'createdAt':
       case 'updatedAt':
         return (value) =>

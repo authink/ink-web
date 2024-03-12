@@ -11,6 +11,7 @@ const nextConfig = {
     locales: ['en', 'zh-CN'],
     defaultLocale: 'en',
   },
+  transpilePackages: ['@ant-design/icons'],
 }
 
 export default nextConfig
