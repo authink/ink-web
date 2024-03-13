@@ -1,10 +1,9 @@
-import useQuery from '@/components/hooks/useQuery'
 import { setImmediate } from '@authink/commonjs'
 import staticProps from '@/lib/staticProps'
 import { App, Table } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
-import { Active, Loading } from '@authink/bottlejs'
+import { Active, Loading, useQuery } from '@authink/bottlejs'
 
 function activeRender(value) {
   return <Active value={value} />

@@ -11,7 +11,7 @@ import { Layout, Menu, Button, Typography, theme } from 'antd'
 import copyright from '@/lib/copyright'
 import { Flex } from 'antd'
 import { Space } from 'antd'
-import LocaleSwitcher from './LocaleSwitcher'
+import { LocaleSwitcher } from '@authink/bottlejs'
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/router'
 

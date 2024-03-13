@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { ConfigProvider, App, theme } from 'antd'
 import useLayout from '@/components/hooks/useLayout'
-import AppSWRConfig from '@/components/AppSWRConfig'
+import { AppSWRConfig } from '@authink/bottlejs'
 import { useState } from 'react'
 
 const timeZone = process.env.NEXT_PUBLIC_TIME_ZONE
