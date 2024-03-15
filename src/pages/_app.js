@@ -1,4 +1,3 @@
-import '@/styles/global.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -7,9 +6,9 @@ import { useLayout, AppSWRConfig } from '@authink/bottlejs'
 import { useState } from 'react'
 import { AppstoreOutlined, DashboardOutlined } from '@ant-design/icons'
 import copyright from '@/lib/copyright'
+import authnRoutes from '@/lib/authnRoutes'
 
 const timeZone = process.env.NEXT_PUBLIC_TIME_ZONE
-const authnRoutes = ['/', '/apps']
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
