@@ -12,8 +12,8 @@ dependencies:
     specifier: 5.3.1
     version: 5.3.1(react-dom@18.2.0)(react@18.2.0)
   '@authink/bottlejs':
-    specifier: 0.0.10
-    version: 0.0.10(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
+    specifier: 0.0.12
+    version: 0.0.12(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
   '@authink/commonjs':
     specifier: 0.0.5
     version: 0.0.5
@@ -113,8 +113,8 @@ packages:
       throttle-debounce: 5.0.0
     dev: false
 
-  /@authink/bottlejs@0.0.10(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
-    resolution: {integrity: sha512-D+wA5ZFq/JAJ9Ar70KFuOlcxLveOCt7OAnmjcftgs+FqVjiMNlK0VjNb+A/l8uT4x+Vm52gHRrCZlGLuXr/WQQ==}
+  /@authink/bottlejs@0.0.12(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
+    resolution: {integrity: sha512-FveyIV+e3uLFAlzDGKeVNBSiiAr82DIyBra7kupMA9NvewotgVFZNmoh9FJofp5uMOAIfbMstwj+0p1fxqcwFw==}
     peerDependencies:
       '@ant-design/cssinjs': 1.18.4
       '@ant-design/icons': 5.3.1
