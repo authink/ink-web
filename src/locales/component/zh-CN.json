@@ -1,7 +1,4 @@
 {
-  "switchLocale": {
-    "locale": "English"
-  },
   "menu": {
     "dashboard": "工作台",
     "apps": "管理应用"
