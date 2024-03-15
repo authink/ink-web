@@ -2,12 +2,11 @@ import Head from 'next/head'
 import { Button } from 'antd'
 import staticProps from '@/lib/staticProps'
 import { useTranslations } from 'next-intl'
-import { Loading, useQuery } from '@authink/bottlejs'
-import { setImmediate } from '@authink/commonjs'
-import { message } from 'antd'
+import { Loading, useError, useQuery } from '@authink/bottlejs'
 
 export default function Dashboard() {
   const t = useTranslations()
+  const show = useError()
   const { data, error, isLoading, isValidating } = useQuery({
     path: 'admin/dashboard',
   })
@@ -17,7 +16,7 @@ export default function Dashboard() {
   }
 
   if (error) {
-    setImmediate(() => message.error(error.message))
+    show(error)
   }
 
   return (

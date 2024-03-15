@@ -1,9 +1,8 @@
-import { setImmediate } from '@authink/commonjs'
 import staticProps from '@/lib/staticProps'
-import { App, Table } from 'antd'
+import { Table } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
-import { Active, Loading, useQuery } from '@authink/bottlejs'
+import { Active, Loading, useQuery, useError } from '@authink/bottlejs'
 
 function activeRender(value) {
   return <Active value={value} />
@@ -11,8 +10,8 @@ function activeRender(value) {
 
 export default function Apps() {
   const t = useTranslations()
+  const show = useError()
   const format = useFormatter()
-  const { message } = App.useApp()
   const { data, error, isLoading, isValidating } = useQuery({
     path: 'admin/apps',
   })
@@ -22,7 +21,7 @@ export default function Apps() {
   }
 
   if (error) {
-    setImmediate(() => message.error(error.message))
+    show(error)
   }
 
   const fieldRender = (field) => {
