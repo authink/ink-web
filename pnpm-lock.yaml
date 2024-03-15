@@ -13,10 +13,10 @@ dependencies:
     version: 5.3.1(react-dom@18.2.0)(react@18.2.0)
   '@authink/bottlejs':
     specifier: 0.0.17
-    version: 0.0.17(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
+    version: 0.0.17(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.6)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
   '@authink/commonjs':
-    specifier: 0.0.5
-    version: 0.0.5
+    specifier: 0.0.6
+    version: 0.0.6
   '@react-hookz/web':
     specifier: 24.0.4
     version: 24.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -113,7 +113,7 @@ packages:
       throttle-debounce: 5.0.0
     dev: false
 
-  /@authink/bottlejs@0.0.17(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.5)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
+  /@authink/bottlejs@0.0.17(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.1)(@authink/commonjs@0.0.6)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
     resolution: {integrity: sha512-Ofa74wnu+1UizwK6inSrQGNkjEEpuvjuMCbANvyqGr9DZ2XRIFClHmBxttrFcKwYtw9fNP9J7I5jIWnvD5XEpg==}
     peerDependencies:
       '@ant-design/cssinjs': 1.18.4
@@ -129,7 +129,7 @@ packages:
     dependencies:
       '@ant-design/cssinjs': 1.18.4(react-dom@18.2.0)(react@18.2.0)
       '@ant-design/icons': 5.3.1(react-dom@18.2.0)(react@18.2.0)
-      '@authink/commonjs': 0.0.5
+      '@authink/commonjs': 0.0.6
       '@babel/runtime': 7.24.0
       '@react-hookz/web': 24.0.4(react-dom@18.2.0)(react@18.2.0)
       antd: 5.15.2(react-dom@18.2.0)(react@18.2.0)
@@ -140,8 +140,8 @@ packages:
       swr: 2.2.5(react@18.2.0)
     dev: false
 
-  /@authink/commonjs@0.0.5:
-    resolution: {integrity: sha512-eF+LJiLRGcqzFbdo1H0aUfAwlLMG0sgSJa6tlzGeKZV4tO7/zkw1H0j6Bwo4Bhbl0uklNkrvED+zJ/4ag6VpFg==}
+  /@authink/commonjs@0.0.6:
+    resolution: {integrity: sha512-fLg1gGdthLXf7HgrgZjcueplZ+/kV1F7AK8o0KTxSTAMgz5c5C2fsUcvKwj9PkmMKIBbF9TNZctuxZYuN9U/Sw==}
     dev: false
 
   /@babel/runtime@7.24.0:
