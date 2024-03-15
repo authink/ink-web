@@ -1,3 +1,14 @@
 {
-  "login": "登录"
+  "inkAdmin": "INK 管理后台",
+  "login": "登录",
+  "email": "邮箱地址",
+  "password": "密码",
+  "rememberMe": "自动登录",
+  "forgotPassword": "忘记密码",
+  "invalidEmail": "请输入邮箱地址",
+  "invalidEmailFormat": "邮箱地址格式不正确",
+  "invalidPassword": "请输入密码",
+  "invalidPasswordLen": "密码至少是6个字符",
+  "loginSucceed": "登录成功",
+  "loginFailed": "登录失败"
 }

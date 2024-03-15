@@ -23,12 +23,12 @@ export default function Login() {
     path: 'token/grant',
   })
 
-  const validateEmail = (_, value) => {
+  const emailValidator = (_, value) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     if (!value || regex.test(value)) {
       return Promise.resolve()
     }
-    return Promise.reject('invalid email format')
+    return Promise.reject(t('invalidEmailFormat'))
   }
 
   const onFinish = async ({ email, password }) => {
@@ -41,11 +41,11 @@ export default function Login() {
       })
       setDisabled(true)
       token.set(data)
-      message.success('Login succeed')
+      message.success(t('loginSucceed'))
       await wait(500)
       router.push('/')
     } catch (error) {
-      message.error('Login failed')
+      message.error(error.message || t('loginFailed'))
     }
   }
 
@@ -65,16 +65,16 @@ export default function Login() {
         onFinish={onFinish}
         disabled={isMutating || disabled}
       >
-        <h1 style={{ textAlign: 'center' }}>INK ADMIN</h1>
+        <h1 style={{ textAlign: 'center' }}>{t('inkAdmin')}</h1>
         <Form.Item
           name="email"
           rules={[
             {
               required: true,
-              message: 'Please input your email!',
+              message: t('invalidEmail'),
             },
             {
-              validator: validateEmail,
+              validator: emailValidator,
             },
           ]}
         >
@@ -84,7 +84,7 @@ export default function Login() {
                 <UserOutlined />
               </span>
             }
-            placeholder="Email"
+            placeholder={t('email')}
             allowClear
           />
         </Form.Item>
@@ -94,11 +94,11 @@ export default function Login() {
           rules={[
             {
               required: true,
-              message: 'Please input your Password!',
+              message: t('invalidPassword'),
             },
             {
-              min: 5,
-              message: 'Password length can not be less than 5',
+              min: 6,
+              message: t('invalidPasswordLen'),
             },
           ]}
         >
@@ -108,7 +108,7 @@ export default function Login() {
                 <LockOutlined />
               </span>
             }
-            placeholder="Password"
+            placeholder={t('password')}
           />
         </Form.Item>
 
@@ -117,11 +117,11 @@ export default function Login() {
             checked={token.rememberMe}
             onChange={(e) => token.setRememberMe(e.target.checked)}
           >
-            Remember me
+            {t('rememberMe')}
           </Checkbox>
 
           <a href="" style={{ float: 'right' }}>
-            Forgot password
+            {t('forgotPassword')}
           </a>
         </Form.Item>
 

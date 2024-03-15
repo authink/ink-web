@@ -12,7 +12,7 @@ export default function Dashboard() {
       </Head>
 
       <div>
-        <Button type="primary">Button</Button>
+        <Button type="primary">{t('welcome')}</Button>
       </div>
     </>
   )
