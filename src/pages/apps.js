@@ -1,5 +1,5 @@
 import staticProps from '@/lib/staticProps'
-import { Button, Table, Flex, Tooltip } from 'antd'
+import { Button, Table, Flex, Tooltip, App } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
 import {
@@ -9,7 +9,7 @@ import {
   useSuccess,
   useMutation,
 } from '@authink/bottlejs'
-import { LockOutlined, UnlockOutlined } from '@ant-design/icons'
+import { KeyOutlined, LockOutlined, UnlockOutlined } from '@ant-design/icons'
 import { http } from '@authink/commonjs'
 import { useState } from 'react'
 import { ignoreError } from '@authink/commonjs'
@@ -22,6 +22,7 @@ export default function Apps() {
   const t = useTranslations()
   const showSuccess = useSuccess()
   const format = useFormatter()
+  const { modal } = App.useApp()
   const { data, isLoading, isValidating } = useQuery({
     path: 'admin/apps',
     options: {
@@ -81,12 +82,41 @@ export default function Apps() {
     key: 'action',
     render: (_, app) => (
       <Flex wrap="wrap" gap="small">
+        <Tooltip title={t('resetSecret')}>
+          <Button
+            type="primary"
+            shape="circle"
+            disabled={isMutating}
+            icon={<KeyOutlined />}
+            onClick={() =>
+              ignoreError(
+                async () =>
+                  await updateApp(
+                    {
+                      id: app.id,
+                      resetSecret: true,
+                    },
+                    {
+                      revalidate: false,
+                      onSuccess: (data) =>
+                        modal.success({
+                          title: t('resetSecretSucceed'),
+                          content: data.secret,
+                        }),
+                    },
+                  ),
+              )
+            }
+          />
+        </Tooltip>
+
         <Tooltip title={app.active ? t('lock') : t('unlock')}>
           <Button
             type="primary"
             shape="circle"
             danger
             disabled={isMutating || app.name === 'admin.dev'}
+            icon={app.active ? <UnlockOutlined /> : <LockOutlined />}
             onClick={() =>
               ignoreError(
                 async () =>
@@ -113,7 +143,6 @@ export default function Apps() {
                   ),
               )
             }
-            icon={app.active ? <UnlockOutlined /> : <LockOutlined />}
           />
         </Tooltip>
       </Flex>

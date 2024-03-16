@@ -9,5 +9,7 @@
   "lock": "Lock",
   "unlock": "Unlock",
   "lockSucceed": "Locked successful",
-  "unlockSucceed": "Unlocked successful"
+  "unlockSucceed": "Unlocked successful",
+  "resetSecret": "Reset secret",
+  "resetSecretSucceed": "Reset secret successful"
 }
