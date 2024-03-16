@@ -9,10 +9,11 @@ import {
   useSuccess,
   useMutation,
 } from '@authink/bottlejs'
-import { KeyOutlined, LockOutlined, UnlockOutlined } from '@ant-design/icons'
+import { KeyOutlined, LockOutlined, PlusOutlined, UnlockOutlined } from '@ant-design/icons'
 import { http } from '@authink/commonjs'
 import { useState } from 'react'
 import { ignoreError } from '@authink/commonjs'
+import { Typography } from 'antd'
 
 function activeRender(value) {
   return <Active value={value} />
@@ -35,7 +36,7 @@ export default function Apps() {
   })
   const [pagination, setPagination] = useState({
     current: 1,
-    pageSize: 10,
+    pageSize: 5,
     total: data ? data.length : 0,
     showSizeChanger: true,
     onChange: (page, pageSize) => {
@@ -165,6 +166,15 @@ export default function Apps() {
       <Head>
         <title>{t('apps')}</title>
       </Head>
+
+      <Flex
+        justify="space-between"
+        align="end"
+        style={{ padding: 8 }}
+      >
+        <Typography.Title level={3}>{t('appList')}</Typography.Title>
+        <Button type="primary" icon={<PlusOutlined />}>{t('new')}</Button>
+      </Flex>
 
       {data && (
         <Table

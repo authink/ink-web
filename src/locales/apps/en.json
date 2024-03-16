@@ -11,5 +11,7 @@
   "lockSucceed": "Locked successful",
   "unlockSucceed": "Unlocked successful",
   "resetSecret": "Reset secret",
-  "resetSecretSucceed": "Reset secret successful"
+  "resetSecretSucceed": "Reset secret successful",
+  "appList": "Apps",
+  "new": "New"
 }

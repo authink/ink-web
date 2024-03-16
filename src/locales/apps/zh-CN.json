@@ -11,5 +11,7 @@
   "lockSucceed": "锁定成功",
   "unlockSucceed": "解锁成功",
   "resetSecret": "重置密钥",
-  "resetSecretSucceed": "重置密钥成功"
+  "resetSecretSucceed": "重置密钥成功",
+  "appList": "应用列表",
+  "new": "新建"
 }
