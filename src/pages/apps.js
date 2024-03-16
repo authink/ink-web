@@ -6,12 +6,13 @@ import {
   Active,
   Loading,
   useQuery,
-  useError,
+  useSuccess,
   useMutation,
 } from '@authink/bottlejs'
 import { LockOutlined, UnlockOutlined } from '@ant-design/icons'
 import { http } from '@authink/commonjs'
 import { useState } from 'react'
+import { ignoreError } from '@authink/commonjs'
 
 function activeRender(value) {
   return <Active value={value} />
@@ -19,9 +20,9 @@ function activeRender(value) {
 
 export default function Apps() {
   const t = useTranslations()
-  const showError = useError()
+  const showSuccess = useSuccess()
   const format = useFormatter()
-  const { data, error, isLoading, isValidating } = useQuery({
+  const { data, isLoading, isValidating } = useQuery({
     path: 'admin/apps',
     options: {
       revalidateOnFocus: false,
@@ -46,10 +47,6 @@ export default function Apps() {
 
   if (isLoading || isValidating) {
     return <Loading />
-  }
-
-  if (error) {
-    showError(error)
   }
 
   const fieldRender = (field) => {
@@ -91,18 +88,29 @@ export default function Apps() {
             danger
             disabled={isMutating || app.name === 'admin.dev'}
             onClick={() =>
-              updateApp(
-                {
-                  id: app.id,
-                  activeToggle: true,
-                },
-                {
-                  optimisticData: (apps) =>
-                    apps.map((a) =>
-                      a.id === app.id ? { ...a, active: !a.active } : a,
-                    ),
-                  rollbackOnError: true,
-                },
+              ignoreError(
+                async () =>
+                  await updateApp(
+                    {
+                      id: app.id,
+                      activeToggle: true,
+                    },
+                    {
+                      optimisticData: (apps) =>
+                        apps.map((a) =>
+                          a.id === app.id ? { ...a, active: !a.active } : a,
+                        ),
+                      rollbackOnError: true,
+                      revalidate: false,
+                      onSuccess: (data) => {
+                        if (data.active) {
+                          showSuccess(t('unlockSucceed'))
+                        } else {
+                          showSuccess(t('lockSucceed'))
+                        }
+                      },
+                    },
+                  ),
               )
             }
             icon={app.active ? <UnlockOutlined /> : <LockOutlined />}

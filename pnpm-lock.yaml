@@ -12,11 +12,11 @@ dependencies:
     specifier: 5.3.3
     version: 5.3.3(react-dom@18.2.0)(react@18.2.0)
   '@authink/bottlejs':
-    specifier: 0.0.23
-    version: 0.0.23(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.10)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
+    specifier: 0.0.27
+    version: 0.0.27(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.11)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
   '@authink/commonjs':
-    specifier: 0.0.10
-    version: 0.0.10
+    specifier: 0.0.11
+    version: 0.0.11
   '@react-hookz/web':
     specifier: 24.0.4
     version: 24.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -113,12 +113,12 @@ packages:
       throttle-debounce: 5.0.0
     dev: false
 
-  /@authink/bottlejs@0.0.23(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.10)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
-    resolution: {integrity: sha512-i5TDCCfQbBK9YmiSM/nX9lPfHqDb4B6/3P2gwb1Mw3twSsq/85JSTsJxKyftWYpjtxoaC3Vz5ZfI2IGfvV2/Bg==}
+  /@authink/bottlejs@0.0.27(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.11)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
+    resolution: {integrity: sha512-+Ns/7IENoC9X4urMQoxS6ajN5Ff7JQyQhGp6LKAMd0ZiYQiaP3EIwvcGEr1COuGJeRJAEBtY+gJEfk5m/+8Zsg==}
     peerDependencies:
       '@ant-design/cssinjs': 1.18.4
       '@ant-design/icons': 5.3.3
-      '@authink/commonjs': ^0.0.9
+      '@authink/commonjs': ^0.0.11
       '@react-hookz/web': 24.0.4
       antd: 5.15.2
       next: 14.1.3
@@ -129,7 +129,7 @@ packages:
     dependencies:
       '@ant-design/cssinjs': 1.18.4(react-dom@18.2.0)(react@18.2.0)
       '@ant-design/icons': 5.3.3(react-dom@18.2.0)(react@18.2.0)
-      '@authink/commonjs': 0.0.10
+      '@authink/commonjs': 0.0.11
       '@babel/runtime': 7.24.0
       '@react-hookz/web': 24.0.4(react-dom@18.2.0)(react@18.2.0)
       antd: 5.15.2(react-dom@18.2.0)(react@18.2.0)
@@ -140,8 +140,8 @@ packages:
       swr: 2.2.5(react@18.2.0)
     dev: false
 
-  /@authink/commonjs@0.0.10:
-    resolution: {integrity: sha512-cGqM3BnUcnkQjxVKXSRUjcQbF3A7w4xkuSZc03K3kmcqWol6ekCJ562+x8CkoJqPmEIz1YgGjBBV2U4PBsgyLQ==}
+  /@authink/commonjs@0.0.11:
+    resolution: {integrity: sha512-DLzw3pg8F6mxBeECZURu1PWveDGrJSSS5xBQIZsC/4/gaMe0dzSw1QXWGxZAJtJSvqeMb5dbbnR3S5lM0bcKpw==}
     dev: false
 
   /@babel/runtime@7.24.0:
@@ -667,7 +667,7 @@ packages:
       qrcode.react: 3.1.0(react@18.2.0)
       rc-cascader: 3.24.0(react-dom@18.2.0)(react@18.2.0)
       rc-checkbox: 3.2.0(react-dom@18.2.0)(react@18.2.0)
-      rc-collapse: 3.7.2(react-dom@18.2.0)(react@18.2.0)
+      rc-collapse: 3.7.3(react-dom@18.2.0)(react@18.2.0)
       rc-dialog: 9.4.0(react-dom@18.2.0)(react@18.2.0)
       rc-drawer: 7.1.0(react-dom@18.2.0)(react@18.2.0)
       rc-dropdown: 4.2.0(react-dom@18.2.0)(react@18.2.0)
@@ -2450,8 +2450,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /rc-collapse@3.7.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ZRw6ipDyOnfLFySxAiCMdbHtb5ePAsB9mT17PA6y1mRD/W6KHRaZeb5qK/X9xDV1CqgyxMpzw0VdS74PCcUk4A==}
+  /rc-collapse@3.7.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-60FJcdTRn0X5sELF18TANwtVi7FtModq649H11mYF1jh83DniMoM4MqY627sEKRCTm4+WXfGDcB7hY5oW6xhyw==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'

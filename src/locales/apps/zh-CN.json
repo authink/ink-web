@@ -7,5 +7,7 @@
   "updatedAt": "更新时间",
   "action": "操作",
   "lock": "锁定",
-  "unlock": "解锁"
+  "unlock": "解锁",
+  "lockSucceed": "锁定成功",
+  "unlockSucceed": "解锁成功"
 }

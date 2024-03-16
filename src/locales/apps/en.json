@@ -7,5 +7,7 @@
   "updatedAt": "UpdatedAt",
   "action": "Action",
   "lock": "Lock",
-  "unlock": "Unlock"
+  "unlock": "Unlock",
+  "lockSucceed": "Locked successful",
+  "unlockSucceed": "Unlocked successful"
 }
