@@ -1,5 +1,5 @@
 import staticProps from '@/lib/staticProps'
-import { Button, Table, Flex, Tooltip, App } from 'antd'
+import { Button, Table, Flex, Tooltip, App, Row, Col } from 'antd'
 import { useTranslations, useFormatter } from 'next-intl'
 import Head from 'next/head'
 import {
@@ -98,10 +98,21 @@ export default function Apps() {
                     },
                     {
                       revalidate: false,
-                      onSuccess: (data) =>
+                      onSuccess: ({ id, secret }) =>
                         modal.success({
                           title: t('resetSecretSucceed'),
-                          content: data.secret,
+                          content: (
+                            <div>
+                              <Row>
+                                <Col span={12}>AppId</Col>
+                                <Col span={12}>{id}</Col>
+                              </Row>
+                              <Row>
+                                <Col span={12}>AppSecret</Col>
+                                <Col span={12}>{secret}</Col>
+                              </Row>
+                            </div>
+                          ),
                         }),
                     },
                   ),
