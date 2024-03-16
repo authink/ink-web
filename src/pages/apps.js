@@ -33,7 +33,7 @@ export default function Apps() {
   })
   const [pagination, setPagination] = useState({
     current: 1,
-    pageSize: 1,
+    pageSize: 10,
     total: data ? data.length : 0,
     showSizeChanger: true,
     onChange: (page, pageSize) => {
