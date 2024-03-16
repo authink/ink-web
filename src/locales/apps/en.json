@@ -4,5 +4,8 @@
   "name": "Name",
   "active": "Active",
   "createdAt": "CreatedAt",
-  "updatedAt": "UpdatedAt"
+  "updatedAt": "UpdatedAt",
+  "action": "Action",
+  "lock": "Lock",
+  "unlock": "Unlock"
 }
