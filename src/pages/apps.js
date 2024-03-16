@@ -10,7 +10,7 @@ function activeRender(value) {
 
 export default function Apps() {
   const t = useTranslations()
-  const show = useError()
+  const showError = useError()
   const format = useFormatter()
   const { data, error, isLoading, isValidating } = useQuery({
     path: 'admin/apps',
@@ -21,7 +21,7 @@ export default function Apps() {
   }
 
   if (error) {
-    show(error)
+    showError(error)
   }
 
   const fieldRender = (field) => {

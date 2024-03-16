@@ -9,6 +9,5 @@
   "invalidEmailFormat": "邮箱地址格式不正确",
   "invalidPassword": "请输入密码",
   "invalidPasswordLen": "密码至少是6个字符",
-  "loginSucceed": "登录成功",
-  "loginFailed": "登录失败"
+  "loginSucceed": "登录成功"
 }

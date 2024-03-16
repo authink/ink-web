@@ -6,7 +6,7 @@ import { Loading, useError, useQuery } from '@authink/bottlejs'
 
 export default function Dashboard() {
   const t = useTranslations()
-  const show = useError()
+  const showError = useError()
   const { data, error, isLoading, isValidating } = useQuery({
     path: 'admin/dashboard',
   })
@@ -16,7 +16,7 @@ export default function Dashboard() {
   }
 
   if (error) {
-    show(error)
+    showError(error)
   }
 
   return (

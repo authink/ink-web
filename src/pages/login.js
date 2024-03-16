@@ -1,7 +1,7 @@
-import { useToken, useMutation } from '@authink/bottlejs'
+import { useToken, useMutation, useSuccess, useError } from '@authink/bottlejs'
 import { wait } from '@authink/commonjs'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Checkbox, Form, Input, App } from 'antd'
+import { Button, Checkbox, Form, Input } from 'antd'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -14,10 +14,11 @@ const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
 
 export default function Login() {
-  const { message } = App.useApp()
   const router = useRouter()
   const token = useToken()
   const t = useTranslations()
+  const showSuccess = useSuccess()
+  const showError = useError()
   const [disabled, setDisabled] = useState()
   const { trigger: grantToken, isMutating } = useMutation({
     path: 'token/grant',
@@ -41,11 +42,11 @@ export default function Login() {
       })
       setDisabled(true)
       token.set(data)
-      message.success(t('loginSucceed'))
+      showSuccess(t('loginSucceed'))
       await wait(500)
       router.push('/')
-    } catch (error) {
-      message.error(error.message || t('loginFailed'))
+    } catch (e) {
+      showError(e)
     }
   }
 
