@@ -8,5 +8,8 @@
   "active": "有效",
   "createdAt": "创建时间",
   "updatedAt": "更新时间",
-  "action": "操作"
+  "action": "操作",
+  "delete": "删除",
+  "confirmDelete": "确定要删除吗？",
+  "deleteSucceed": "删除成功"
 }

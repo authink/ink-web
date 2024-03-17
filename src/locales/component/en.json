@@ -8,5 +8,8 @@
   "active": "Active",
   "createdAt": "CreatedAt",
   "updatedAt": "UpdatedAt",
-  "action": "Action"
+  "action": "Action",
+  "delete": "Delete",
+  "confirmDelete": "Are you sure to delete?",
+  "deleteSucceed": "Deleted successfully"
 }

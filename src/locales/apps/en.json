@@ -3,15 +3,15 @@
   "name": "Name",
   "lock": "Lock",
   "unlock": "Unlock",
-  "lockSucceed": "Locked successful",
-  "unlockSucceed": "Unlocked successful",
+  "lockSucceed": "Locked successfully",
+  "unlockSucceed": "Unlocked successfully",
   "resetSecret": "Reset secret",
-  "resetSecretSucceed": "Reset secret successful",
+  "resetSecretSucceed": "Reset secret successfully",
   "appList": "Apps",
   "new": "New",
   "newApp": "New App",
   "appName": "App name",
   "invalidAppName": "Invalid App name",
   "invalidAppNameLen": "App name must be at least 6 characters long",
-  "newAppSucceed": "New app successful"
+  "newAppSucceed": "Create app successfully"
 }

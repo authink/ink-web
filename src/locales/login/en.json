@@ -9,5 +9,5 @@
   "invalidEmailFormat": "Email format is incorrect",
   "invalidPassword": "Please input your password",
   "invalidPasswordLen": "Password must be at least 6 characters long",
-  "loginSucceed": "Login successful"
+  "loginSucceed": "Login successfully"
 }
