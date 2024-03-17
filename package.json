@@ -12,7 +12,7 @@
   "dependencies": {
     "@ant-design/cssinjs": "1.18.4",
     "@ant-design/icons": "5.3.3",
-    "@authink/bottlejs": "0.0.27",
+    "@authink/bottlejs": "0.0.33",
     "@authink/commonjs": "0.0.11",
     "@react-hookz/web": "24.0.4",
     "antd": "5.15.2",

@@ -23,6 +23,7 @@ import { Typography } from 'antd'
 import { Modal } from 'antd'
 import { Form } from 'antd'
 import { Input } from 'antd'
+import { usePagination } from '@authink/bottlejs'
 
 const path = 'admin/apps'
 
@@ -37,6 +38,7 @@ export default function Apps() {
   const { modal } = App.useApp()
   const [openNew, setOpenNew] = useState(false)
   const [form] = Form.useForm()
+  const { pagination } = usePagination()
   const { data, isLoading, isValidating } = useQuery({
     path,
     options: {
@@ -49,18 +51,6 @@ export default function Apps() {
   const { trigger: updateApp, isMutating } = useMutation({
     path,
     method: http.PUT,
-  })
-  const [pagination, setPagination] = useState({
-    current: 1,
-    pageSize: 5,
-    total: data ? data.length : 0,
-    showSizeChanger: true,
-    onChange: (page, pageSize) => {
-      setPagination({ ...pagination, current: page, pageSize })
-    },
-    onShowSizeChange: (current, size) => {
-      setPagination({ ...pagination, pageSize: size, current: 1 })
-    },
   })
 
   if (isLoading || isValidating) {
@@ -210,11 +200,15 @@ export default function Apps() {
       {data && (
         <Table
           columns={columns}
+          rowKey={(app) => app.id}
           dataSource={data.map((item, i) => ({
             key: i + 1,
             ...item,
           }))}
           pagination={pagination}
+          scroll={{
+            x: true,
+          }}
           style={{ height: '100%' }}
         />
       )}

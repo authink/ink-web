@@ -1,6 +1,12 @@
 {
   "menu": {
     "dashboard": "工作台",
-    "apps": "管理应用"
-  }
+    "apps": "应用管理",
+    "tokens": "凭证管理"
+  },
+  "id": "ID",
+  "active": "有效",
+  "createdAt": "创建时间",
+  "updatedAt": "更新时间",
+  "action": "操作"
 }

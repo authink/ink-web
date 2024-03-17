@@ -1,6 +1,12 @@
 {
   "menu": {
     "dashboard": "Dashboard",
-    "apps": "Apps"
-  }
+    "apps": "Apps",
+    "tokens": "Tokens"
+  },
+  "id": "ID",
+  "active": "Active",
+  "createdAt": "CreatedAt",
+  "updatedAt": "UpdatedAt",
+  "action": "Action"
 }

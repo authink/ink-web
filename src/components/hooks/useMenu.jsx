@@ -1,4 +1,8 @@
-import { AppstoreOutlined, DashboardOutlined } from '@ant-design/icons'
+import {
+  AppstoreOutlined,
+  DashboardOutlined,
+  KeyOutlined,
+} from '@ant-design/icons'
 
 export default function useMenu() {
   return [
@@ -11,6 +15,11 @@ export default function useMenu() {
       key: 'apps',
       Icon: AppstoreOutlined,
       route: '/apps',
+    },
+    {
+      key: 'tokens',
+      Icon: KeyOutlined,
+      route: '/tokens',
     },
   ]
 }

@@ -1,11 +1,6 @@
 {
   "apps": "应用管理",
-  "id": "ID",
   "name": "名称",
-  "active": "有效",
-  "createdAt": "创建时间",
-  "updatedAt": "更新时间",
-  "action": "操作",
   "lock": "锁定",
   "unlock": "解锁",
   "lockSucceed": "锁定成功",

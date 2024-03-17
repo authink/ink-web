@@ -1,11 +1,6 @@
 {
   "apps": "Apps",
-  "id": "ID",
   "name": "Name",
-  "active": "Active",
-  "createdAt": "CreatedAt",
-  "updatedAt": "UpdatedAt",
-  "action": "Action",
   "lock": "Lock",
   "unlock": "Unlock",
   "lockSucceed": "Locked successful",
