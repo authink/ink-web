@@ -13,5 +13,9 @@
   "resetSecret": "Reset secret",
   "resetSecretSucceed": "Reset secret successful",
   "appList": "Apps",
-  "new": "New"
+  "new": "New",
+  "newApp": "New App",
+  "appName": "App name",
+  "invalidAppName": "Invalid App name",
+  "invalidAppNameLen": "App name must be at least 6 characters long"
 }

@@ -9,11 +9,22 @@ import {
   useSuccess,
   useMutation,
 } from '@authink/bottlejs'
-import { KeyOutlined, LockOutlined, PlusOutlined, UnlockOutlined } from '@ant-design/icons'
+import {
+  AppstoreAddOutlined,
+  KeyOutlined,
+  LockOutlined,
+  PlusOutlined,
+  UnlockOutlined,
+} from '@ant-design/icons'
 import { http } from '@authink/commonjs'
 import { useState } from 'react'
 import { ignoreError } from '@authink/commonjs'
 import { Typography } from 'antd'
+import { Modal } from 'antd'
+import { Form } from 'antd'
+import { Input } from 'antd'
+
+const path = 'admin/apps'
 
 function activeRender(value) {
   return <Active value={value} />
@@ -24,14 +35,19 @@ export default function Apps() {
   const showSuccess = useSuccess()
   const format = useFormatter()
   const { modal } = App.useApp()
+  const [openNew, setOpenNew] = useState(false)
+  const [form] = Form.useForm()
   const { data, isLoading, isValidating } = useQuery({
-    path: 'admin/apps',
+    path,
     options: {
       revalidateOnFocus: false,
     },
   })
+  const { trigger: addApp, isMutating: isAdding } = useMutation({
+    path,
+  })
   const { trigger: updateApp, isMutating } = useMutation({
-    path: 'admin/apps',
+    path,
     method: http.PUT,
   })
   const [pagination, setPagination] = useState({
@@ -161,19 +177,33 @@ export default function Apps() {
     ),
   })
 
+  const closeNew = () => {
+    setOpenNew(false)
+    form.resetFields()
+  }
+
+  const onFinish = (data) => {
+    ignoreError(async () => {
+      await addApp(data)
+      closeNew()
+    })
+  }
+
   return (
     <>
       <Head>
         <title>{t('apps')}</title>
       </Head>
 
-      <Flex
-        justify="space-between"
-        align="end"
-        style={{ padding: 8 }}
-      >
+      <Flex justify="space-between" align="end" style={{ padding: 8 }}>
         <Typography.Title level={3}>{t('appList')}</Typography.Title>
-        <Button type="primary" icon={<PlusOutlined />}>{t('new')}</Button>
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
+          onClick={() => setOpenNew(true)}
+        >
+          {t('new')}
+        </Button>
       </Flex>
 
       {data && (
@@ -187,6 +217,39 @@ export default function Apps() {
           style={{ height: '100%' }}
         />
       )}
+
+      <Modal
+        title={t('newApp')}
+        centered
+        width={300}
+        open={openNew}
+        onCancel={closeNew}
+        onOk={() => form.submit()}
+        confirmLoading={isAdding}
+      >
+        <Form form={form} onFinish={onFinish} disabled={isAdding}>
+          <Form.Item
+            name="name"
+            rules={[
+              {
+                required: true,
+                message: t('invalidAppName'),
+              },
+              {
+                min: 6,
+                message: t('invalidAppNameLen'),
+              },
+            ]}
+          >
+            <Input
+              prefix={
+                <AppstoreAddOutlined style={{ color: 'rgba(0, 0, 0, 0.25)' }} />
+              }
+              placeholder={t('appName')}
+            />
+          </Form.Item>
+        </Form>
+      </Modal>
     </>
   )
 }

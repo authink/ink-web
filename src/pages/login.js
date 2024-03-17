@@ -51,15 +51,13 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Login</title>
+        <title>{t('login')}</title>
       </Head>
 
       <Form
         name="login"
         initialValues={{}}
-        style={{
-          width: 320,
-        }}
+        width={320}
         size="large"
         onFinish={onFinish}
         disabled={isMutating || disabled}
@@ -78,11 +76,7 @@ export default function Login() {
           ]}
         >
           <Input
-            prefix={
-              <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
-                <UserOutlined />
-              </span>
-            }
+            prefix={<UserOutlined style={{ color: 'rgba(0, 0, 0, 0.25)' }} />}
             placeholder={t('email')}
             allowClear
           />
@@ -102,11 +96,7 @@ export default function Login() {
           ]}
         >
           <Input.Password
-            prefix={
-              <span style={{ color: 'rgba(0, 0, 0, 0.25)' }}>
-                <LockOutlined />
-              </span>
-            }
+            prefix={<LockOutlined style={{ color: 'rgba(0, 0, 0, 0.25)' }} />}
             placeholder={t('password')}
           />
         </Form.Item>
