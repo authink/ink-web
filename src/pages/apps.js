@@ -186,6 +186,7 @@ export default function Apps() {
     ignoreError(async () => {
       await addApp(data)
       closeNew()
+      showSuccess(t('newAppSucceed'))
     })
   }
 

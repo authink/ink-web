@@ -17,5 +17,6 @@
   "newApp": "新建应用",
   "appName": "应用名称",
   "invalidAppName": "请输入应用名称",
-  "invalidAppNameLen": "应用名称至少是6个字符"
+  "invalidAppNameLen": "应用名称至少是6个字符",
+  "newAppSucceed": "新建应用成功"
 }
