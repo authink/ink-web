@@ -12,8 +12,8 @@
   "dependencies": {
     "@ant-design/cssinjs": "1.18.4",
     "@ant-design/icons": "5.3.3",
-    "@authink/bottlejs": "0.0.33",
-    "@authink/commonjs": "0.0.11",
+    "@authink/bottlejs": "0.0.34",
+    "@authink/commonjs": "0.0.12",
     "@react-hookz/web": "24.0.4",
     "antd": "5.15.2",
     "next": "14.1.3",

@@ -1,14 +1,8 @@
 import staticProps from '@/lib/staticProps'
 import { Button, Table, Flex, Tooltip, App, Row, Col } from 'antd'
-import { useTranslations, useFormatter } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import Head from 'next/head'
-import {
-  Active,
-  Loading,
-  useQuery,
-  useSuccess,
-  useMutation,
-} from '@authink/bottlejs'
+import { Loading, useQuery, useSuccess, useMutation } from '@authink/bottlejs'
 import {
   AppstoreAddOutlined,
   KeyOutlined,
@@ -24,17 +18,14 @@ import { Modal } from 'antd'
 import { Form } from 'antd'
 import { Input } from 'antd'
 import { usePagination } from '@authink/bottlejs'
+import { useDataSource } from '@authink/bottlejs'
+import { useColumns } from '@authink/bottlejs'
 
 const path = 'admin/apps'
-
-function activeRender(value) {
-  return <Active value={value} />
-}
 
 export default function Apps() {
   const t = useTranslations()
   const showSuccess = useSuccess()
-  const format = useFormatter()
   const { modal } = App.useApp()
   const [openNew, setOpenNew] = useState(false)
   const [form] = Form.useForm()
@@ -45,6 +36,8 @@ export default function Apps() {
       revalidateOnFocus: false,
     },
   })
+  const dataSource = useDataSource(data ?? [])
+  const columns = useColumns(['id', 'name', 'active', 'createdAt', 'updatedAt'])
   const { trigger: addApp, isMutating: isAdding } = useMutation({
     path,
   })
@@ -57,33 +50,6 @@ export default function Apps() {
     return <Loading />
   }
 
-  const fieldRender = (field) => {
-    switch (field) {
-      case 'active':
-        return activeRender
-      case 'createdAt':
-      case 'updatedAt':
-        return (value) =>
-          format.dateTime(new Date(value), {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-          })
-      default:
-        return (value) => value
-    }
-  }
-
-  const columns = ['id', 'name', 'active', 'createdAt', 'updatedAt'].map(
-    (field) => ({
-      key: field,
-      dataIndex: field,
-      title: t(field),
-      render: fieldRender(field),
-    }),
-  )
   columns.push({
     title: t('action'),
     key: 'action',
@@ -201,10 +167,7 @@ export default function Apps() {
         <Table
           columns={columns}
           rowKey={(app) => app.id}
-          dataSource={data.map((item, i) => ({
-            key: i + 1,
-            ...item,
-          }))}
+          dataSource={dataSource}
           pagination={pagination}
           scroll={{
             x: true,

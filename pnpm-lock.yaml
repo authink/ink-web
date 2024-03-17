@@ -12,11 +12,11 @@ dependencies:
     specifier: 5.3.3
     version: 5.3.3(react-dom@18.2.0)(react@18.2.0)
   '@authink/bottlejs':
-    specifier: 0.0.33
-    version: 0.0.33(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.11)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
+    specifier: 0.0.34
+    version: 0.0.34(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.12)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5)
   '@authink/commonjs':
-    specifier: 0.0.11
-    version: 0.0.11
+    specifier: 0.0.12
+    version: 0.0.12
   '@react-hookz/web':
     specifier: 24.0.4
     version: 24.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -113,12 +113,12 @@ packages:
       throttle-debounce: 5.0.0
     dev: false
 
-  /@authink/bottlejs@0.0.33(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.11)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
-    resolution: {integrity: sha512-5++xsicTy+GzKUU/ncjAkPdHFiX2d+RMW8SvqreAw9M66bj1XNnej+5pUtB6IMYqgy2V7aWceuWSZiU3+jONhA==}
+  /@authink/bottlejs@0.0.34(@ant-design/cssinjs@1.18.4)(@ant-design/icons@5.3.3)(@authink/commonjs@0.0.12)(@react-hookz/web@24.0.4)(antd@5.15.2)(next-intl@3.9.4)(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.5):
+    resolution: {integrity: sha512-Gs/JagBoRpGgQoA0CeRNf3FWg6pZF2OfqiUESBQDMMW/dmv6PSRz+0N216BNUEQUzloh8m5+c0UQYPlGvWWTww==}
     peerDependencies:
       '@ant-design/cssinjs': 1.18.4
       '@ant-design/icons': 5.3.3
-      '@authink/commonjs': ^0.0.11
+      '@authink/commonjs': ^0.0.12
       '@react-hookz/web': 24.0.4
       antd: 5.15.2
       next: 14.1.3
@@ -129,7 +129,7 @@ packages:
     dependencies:
       '@ant-design/cssinjs': 1.18.4(react-dom@18.2.0)(react@18.2.0)
       '@ant-design/icons': 5.3.3(react-dom@18.2.0)(react@18.2.0)
-      '@authink/commonjs': 0.0.11
+      '@authink/commonjs': 0.0.12
       '@babel/runtime': 7.24.0
       '@react-hookz/web': 24.0.4(react-dom@18.2.0)(react@18.2.0)
       antd: 5.15.2(react-dom@18.2.0)(react@18.2.0)
@@ -140,8 +140,8 @@ packages:
       swr: 2.2.5(react@18.2.0)
     dev: false
 
-  /@authink/commonjs@0.0.11:
-    resolution: {integrity: sha512-DLzw3pg8F6mxBeECZURu1PWveDGrJSSS5xBQIZsC/4/gaMe0dzSw1QXWGxZAJtJSvqeMb5dbbnR3S5lM0bcKpw==}
+  /@authink/commonjs@0.0.12:
+    resolution: {integrity: sha512-qFFmDQaBSwU1yioklGgK3pwMU4/NcVlqQkgfgXcrKKKO6I7xAKhveMXrVLNSZWFi6AJMsdaihFnVvJIrr99euw==}
     dev: false
 
   /@babel/runtime@7.24.0:
