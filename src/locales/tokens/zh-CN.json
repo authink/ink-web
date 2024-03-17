@@ -4,5 +4,6 @@
   "refresh_token": "刷新凭证(Token)",
   "appId": "应用ID",
   "appName": "应用名称",
-  "accountId": "账号ID"
+  "accountId": "账号ID",
+  "tokenList": "凭证列表"
 }

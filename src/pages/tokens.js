@@ -9,6 +9,7 @@ import { Loading, useQuery } from '@authink/bottlejs'
 import { ignoreError } from '@authink/commonjs'
 import { http } from '@authink/commonjs'
 import { Button, Flex } from 'antd'
+import { Typography } from 'antd'
 import { Tooltip } from 'antd'
 import { Popconfirm } from 'antd'
 import { Table } from 'antd'
@@ -79,6 +80,10 @@ export default function Tokens() {
       <Head>
         <title>{t('tokens')}</title>
       </Head>
+
+      <Flex justify="space-between" align="end" style={{ padding: 8 }}>
+        <Typography.Title level={3}>{t('tokenList')}</Typography.Title>
+      </Flex>
 
       {data && (
         <Table
