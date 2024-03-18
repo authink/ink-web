@@ -8,5 +8,6 @@
   "invalidPhone": "请输入手机号码",
   "invalidPhoneFormat": "手机号码不正确",
   "newStaff": "添加员工",
-  "newStaffSucceed": "添加员工成功"
+  "newStaffSucceed": "添加员工成功",
+  "editStaff": "编辑员工信息"
 }

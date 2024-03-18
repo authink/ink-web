@@ -1,12 +1,13 @@
 {
   "staffs": "Staffs",
   "staffList": "Staffs",
-  "departure": "departure",
+  "departure": "Departure",
   "email": "Email",
   "phone": "Phone",
   "super": "Super admin",
   "invalidPhone": "Please input phone number",
   "invalidPhoneFormat": "Phone number is incorrect",
   "newStaff": "Add staff",
-  "newStaffSucceed": "Add Staff successfully"
+  "newStaffSucceed": "Add Staff successfully",
+  "editStaff": "Edit staff"
 }

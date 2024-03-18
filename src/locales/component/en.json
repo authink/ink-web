@@ -16,5 +16,7 @@
   "delete": "Delete",
   "confirmDelete": "Are you sure to delete?",
   "deleteSucceed": "Deleted successfully",
-  "new": "New"
+  "new": "New",
+  "edit": "Edit",
+  "basicInfo": "Basic Information"
 }
