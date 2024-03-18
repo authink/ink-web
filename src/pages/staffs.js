@@ -25,14 +25,14 @@ export default function Staffs() {
   pagination.updateTotal(data)
   const dataSource = useDataSource(data?.items ?? [])
   const columns = useColumns([
-    'id',
-    'email',
-    'phone',
-    'active',
-    'super',
-    'departure',
-    'createdAt',
-    'updatedAt',
+    { name: 'id', type: 'number' },
+    { name: 'email', type: 'string' },
+    { name: 'phone', type: 'string' },
+    { name: 'active', type: 'boolean' },
+    { name: 'super', type: 'boolean' },
+    { name: 'departure', type: 'boolean' },
+    { name: 'createdAt', type: 'datetime' },
+    { name: 'updatedAt', type: 'datetime' },
   ])
 
   if (isLoading || isValidating) {

@@ -30,11 +30,11 @@ export default function Tokens() {
   pagination.updateTotal(data)
   const dataSource = useDataSource(data?.items ?? [])
   const columns = useColumns([
-    'id',
-    'appId',
-    'appName',
-    'accountId',
-    'createdAt',
+    { name: 'id', type: 'number' },
+    { name: 'appId', type: 'number' },
+    { name: 'appName', type: 'string' },
+    { name: 'accountId', type: 'string' },
+    { name: 'createdAt', type: 'datetime' },
   ])
   const { trigger: delToken, isMutating } = useMutation({
     path,

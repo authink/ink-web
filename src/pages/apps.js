@@ -49,7 +49,13 @@ export default function Apps() {
     },
   })
   const dataSource = useDataSource(data ?? [])
-  const columns = useColumns(['id', 'name', 'active', 'createdAt', 'updatedAt'])
+  const columns = useColumns([
+    { name: 'id', type: 'number' },
+    { name: 'name', type: 'string' },
+    { name: 'active', type: 'boolean' },
+    { name: 'createdAt', type: 'datetime' },
+    { name: 'updatedAt', type: 'datetime' },
+  ])
   const { trigger: addApp, isMutating: isAdding } = useMutation({
     path,
   })
