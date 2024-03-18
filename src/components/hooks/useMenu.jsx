@@ -2,6 +2,7 @@ import {
   AppstoreOutlined,
   DashboardOutlined,
   KeyOutlined,
+  SafetyOutlined,
   TeamOutlined,
 } from '@ant-design/icons'
 
@@ -29,7 +30,7 @@ export default function useMenu() {
     },
     {
       key: 'logs',
-      Icon: KeyOutlined,
+      Icon: SafetyOutlined,
       route: '/logs',
     },
   ]
