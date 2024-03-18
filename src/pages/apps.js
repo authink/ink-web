@@ -178,7 +178,7 @@ export default function Apps() {
       {data && (
         <Table
           columns={columns}
-          rowKey={(app) => app.id}
+          rowKey={(record) => record.id}
           dataSource={dataSource}
           pagination={pagination}
           scroll={{

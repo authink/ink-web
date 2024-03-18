@@ -86,7 +86,7 @@ export default function Tokens() {
       {data && (
         <Table
           columns={columns}
-          rowKey={(token) => token.id}
+          rowKey={(record) => record.id}
           dataSource={dataSource}
           pagination={pagination}
           scroll={{

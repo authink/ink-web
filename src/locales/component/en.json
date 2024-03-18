@@ -2,6 +2,7 @@
   "menu": {
     "dashboard": "Dashboard",
     "apps": "Apps",
+    "staffs": "Staffs",
     "tokens": "Tokens"
   },
   "id": "ID",

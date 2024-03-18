@@ -2,6 +2,7 @@ import {
   AppstoreOutlined,
   DashboardOutlined,
   KeyOutlined,
+  TeamOutlined,
 } from '@ant-design/icons'
 
 export default function useMenu() {
@@ -15,6 +16,11 @@ export default function useMenu() {
       key: 'apps',
       Icon: AppstoreOutlined,
       route: '/apps',
+    },
+    {
+      key: 'staffs',
+      Icon: TeamOutlined,
+      route: '/staffs',
     },
     {
       key: 'tokens',

@@ -1,3 +1,3 @@
-const authnRoutes = ['/', '/apps', '/tokens']
+const authnRoutes = ['/', '/apps', '/tokens', '/staffs']
 
 export default authnRoutes
