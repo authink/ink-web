@@ -1,5 +1,9 @@
-import { useToken, useMutation, useSuccess } from '@authink/bottlejs'
-import { wait } from '@authink/commonjs'
+import {
+  useToken,
+  useMutation,
+  useSuccess,
+  LocaleSwitcher,
+} from '@authink/bottlejs'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input } from 'antd'
 import Head from 'next/head'
@@ -8,8 +12,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import staticProps from '@/lib/staticProps'
 import copyright from '@/lib/copyright'
-import { LocaleSwitcher } from '@authink/bottlejs'
-import { ignoreError } from '@authink/commonjs'
+import { ignoreError, wait } from '@authink/commonjs'
 
 const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
