@@ -4,5 +4,9 @@
   "departure": "departure",
   "email": "Email",
   "phone": "Phone",
-  "super": "Super admin"
+  "super": "Super admin",
+  "invalidPhone": "Please input phone number",
+  "invalidPhoneFormat": "Phone number is incorrect",
+  "newStaff": "Add staff",
+  "newStaffSucceed": "Add Staff successfully"
 }

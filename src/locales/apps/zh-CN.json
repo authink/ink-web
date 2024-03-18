@@ -8,7 +8,6 @@
   "resetSecret": "重置密钥",
   "resetSecretSucceed": "重置密钥成功",
   "appList": "应用列表",
-  "new": "新建",
   "newApp": "新建应用",
   "appName": "应用名称",
   "invalidAppName": "请输入应用名称",

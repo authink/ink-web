@@ -1,12 +1,9 @@
 {
   "inkAdmin": "INK ADMIN",
   "login": "Log in",
-  "email": "Email",
   "password": "Password",
   "rememberMe": "Remember me",
   "forgotPassword": "Forgot password",
-  "invalidEmail": "Please input your email",
-  "invalidEmailFormat": "Email format is incorrect",
   "invalidPassword": "Please input your password",
   "invalidPasswordLen": "Password must be at least 6 characters long",
   "loginSucceed": "Login successfully"

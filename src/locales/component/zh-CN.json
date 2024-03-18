@@ -5,6 +5,9 @@
     "staffs": "员工管理",
     "tokens": "凭证管理"
   },
+  "email": "邮箱地址",
+  "invalidEmail": "请输入邮箱地址",
+  "invalidEmailFormat": "邮箱地址格式不正确",
   "id": "ID",
   "active": "有效",
   "createdAt": "创建时间",
@@ -12,5 +15,6 @@
   "action": "操作",
   "delete": "删除",
   "confirmDelete": "确定要删除吗？",
-  "deleteSucceed": "删除成功"
+  "deleteSucceed": "删除成功",
+  "new": "新建"
 }

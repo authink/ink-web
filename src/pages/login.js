@@ -13,6 +13,7 @@ import { useTranslations } from 'next-intl'
 import staticProps from '@/lib/staticProps'
 import copyright from '@/lib/copyright'
 import { ignoreError, wait } from '@authink/commonjs'
+import { emailValidator } from '@authink/commonjs'
 
 const appId = Number(process.env.NEXT_PUBLIC_APP_ID)
 const appSecret = process.env.NEXT_PUBLIC_APP_SECRET
@@ -26,14 +27,6 @@ export default function Login() {
   const { trigger: grantToken, isMutating } = useMutation({
     path: 'token/grant',
   })
-
-  const emailValidator = (_, value) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    if (!value || regex.test(value)) {
-      return Promise.resolve()
-    }
-    return Promise.reject(t('invalidEmailFormat'))
-  }
 
   const onFinish = ({ email, password }) => {
     ignoreError(async () => {
@@ -74,7 +67,7 @@ export default function Login() {
               message: t('invalidEmail'),
             },
             {
-              validator: emailValidator,
+              validator: emailValidator(t('invalidEmailFormat')),
             },
           ]}
         >

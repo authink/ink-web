@@ -4,5 +4,9 @@
   "departure": "离职",
   "email": "邮箱地址",
   "phone": "手机号码",
-  "super": "管理员"
+  "super": "管理员",
+  "invalidPhone": "请输入手机号码",
+  "invalidPhoneFormat": "手机号码不正确",
+  "newStaff": "添加员工",
+  "newStaffSucceed": "添加员工成功"
 }

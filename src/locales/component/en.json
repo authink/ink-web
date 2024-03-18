@@ -5,6 +5,9 @@
     "staffs": "Staffs",
     "tokens": "Tokens"
   },
+  "email": "Email",
+  "invalidEmail": "Please input email address",
+  "invalidEmailFormat": "Email format is incorrect",
   "id": "ID",
   "active": "Active",
   "createdAt": "CreatedAt",
@@ -12,5 +15,6 @@
   "action": "Action",
   "delete": "Delete",
   "confirmDelete": "Are you sure to delete?",
-  "deleteSucceed": "Deleted successfully"
+  "deleteSucceed": "Deleted successfully",
+  "new": "New"
 }
