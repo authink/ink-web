@@ -27,5 +27,10 @@ export default function useMenu() {
       Icon: KeyOutlined,
       route: '/tokens',
     },
+    {
+      key: 'logs',
+      Icon: KeyOutlined,
+      route: '/logs',
+    },
   ]
 }

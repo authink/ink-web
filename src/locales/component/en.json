@@ -3,7 +3,8 @@
     "dashboard": "Dashboard",
     "apps": "Apps",
     "staffs": "Staffs",
-    "tokens": "Tokens"
+    "tokens": "Tokens",
+    "logs": "Logs"
   },
   "email": "Email",
   "invalidEmail": "Please input email address",
@@ -12,6 +13,7 @@
   "active": "Active",
   "createdAt": "Created at",
   "updatedAt": "Updated at",
+  "appId": "App ID",
   "action": "Action",
   "delete": "Delete",
   "confirmDelete": "Are you sure to delete?",
