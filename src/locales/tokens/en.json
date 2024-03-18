@@ -2,8 +2,8 @@
   "tokens": "Tokens",
   "access_token": "Access token",
   "refresh_token": "Refresh token",
-  "appId": "App id",
+  "appId": "App ID",
   "appName": "App name",
-  "accountId": "Account id",
+  "accountId": "Account ID",
   "tokenList": "Tokens"
 }
