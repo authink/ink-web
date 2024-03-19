@@ -5,12 +5,11 @@ import {
   Flex,
   Tooltip,
   App,
-  Row,
-  Col,
   Typography,
   Modal,
   Form,
   Input,
+  Descriptions,
 } from 'antd'
 import { useTranslations } from 'next-intl'
 import Head from 'next/head'
@@ -93,16 +92,15 @@ export default function Apps() {
                         modal.success({
                           title: t('resetSecretSucceed'),
                           content: (
-                            <div>
-                              <Row>
-                                <Col span={12}>AppId</Col>
-                                <Col span={12}>{id}</Col>
-                              </Row>
-                              <Row>
-                                <Col span={12}>AppSecret</Col>
-                                <Col span={12}>{secret}</Col>
-                              </Row>
-                            </div>
+                            <Descriptions
+                              column={2}
+                              items={['appId', 'appSecret'].map((field, i) => ({
+                                key: i + 1,
+                                label: t(field),
+                                children: field === 'appId' ? id : secret,
+                              }))}
+                              style={{ marginTop: 16 }}
+                            />
                           ),
                         }),
                     },
