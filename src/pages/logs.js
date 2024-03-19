@@ -30,6 +30,7 @@ export default function Logs() {
     { name: 'staffId', type: 'number' },
     { name: 'action', type: 'string' },
     { name: 'resource', type: 'string' },
+    { name: 'body', type: 'json' },
   ])
 
   if (isLoading || isValidating) {
