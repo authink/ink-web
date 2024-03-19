@@ -1,6 +1,7 @@
 import {
   AppstoreOutlined,
   DashboardOutlined,
+  GroupOutlined,
   KeyOutlined,
   SafetyOutlined,
   TeamOutlined,
@@ -22,6 +23,11 @@ export default function useMenu() {
       key: 'staffs',
       Icon: TeamOutlined,
       route: '/staffs',
+    },
+    {
+      key: 'groups',
+      Icon: GroupOutlined,
+      route: '/groups',
     },
     {
       key: 'tokens',

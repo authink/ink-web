@@ -3,6 +3,7 @@
     "dashboard": "工作台",
     "apps": "应用管理",
     "staffs": "员工管理",
+    "groups": "分组管理",
     "tokens": "凭证管理",
     "logs": "日志管理"
   },
