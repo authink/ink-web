@@ -3,6 +3,7 @@
     "dashboard": "Dashboard",
     "apps": "Apps",
     "staffs": "Staffs",
+    "departments": "Departments",
     "groups": "Groups",
     "tokens": "Tokens",
     "logs": "Logs"

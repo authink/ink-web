@@ -1,4 +1,5 @@
 import {
+  ApartmentOutlined,
   AppstoreOutlined,
   DashboardOutlined,
   GroupOutlined,
@@ -23,6 +24,11 @@ export default function useMenu() {
       key: 'staffs',
       Icon: TeamOutlined,
       route: '/staffs',
+    },
+    {
+      key: 'departments',
+      Icon: ApartmentOutlined,
+      route: '/departments',
     },
     {
       key: 'groups',
