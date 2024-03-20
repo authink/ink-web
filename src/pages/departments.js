@@ -82,6 +82,7 @@ export default function Departments() {
                 showLine
                 blockNode
                 treeData={treeData}
+                selectedKeys={selectedDeptId ? [selectedDeptId] : null}
                 onSelect={(_, { selected, node }) =>
                   setSelectedDeptId(selected ? node.data.id : null)
                 }
@@ -100,10 +101,11 @@ export default function Departments() {
                 }}
                 onFinish={(data) =>
                   ignoreError(async () => {
-                    await saveDept({
+                    const deptId = await saveDept({
                       id: selectedDept.id,
                       ...data,
                     })
+                    setSelectedDeptId(deptId)
                     showSuccess(t('saveSucceed'))
                   })
                 }
