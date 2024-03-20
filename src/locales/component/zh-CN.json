@@ -21,7 +21,11 @@
   "delete": "删除",
   "confirmDelete": "确定要删除吗？",
   "deleteSucceed": "删除成功",
+  "saveSucceed": "保存成功",
   "new": "新建",
   "edit": "编辑",
-  "basicInfo": "基本信息"
+  "save": "保存",
+  "basicInfo": "基本信息",
+  "none": "暂无",
+  "valueExist": "已存在"
 }

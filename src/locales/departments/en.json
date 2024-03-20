@@ -1,5 +1,10 @@
 {
   "departments": "Departments",
   "deptName": "Department name",
-  "deptOwner": "Department owner"
+  "deptOwner": "Department owner",
+  "dept": "Department Information",
+  "newDeptName": "New Department",
+  "invalidName": "Please input name",
+  "invalidNameLen": "Name must be at least 2 characters long",
+  "invalidOwner": "Please select owner"
 }

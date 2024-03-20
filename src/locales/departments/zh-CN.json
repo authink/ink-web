@@ -1,5 +1,10 @@
 {
   "departments": "部门管理",
   "deptName": "部门名称",
-  "deptOwner": "部门负责人"
+  "deptOwner": "负责人",
+  "dept": "部门信息",
+  "newDeptName": "新建部门",
+  "invalidName": "请输入名称",
+  "invalidNameLen": "名称至少是2个字符",
+  "invalidOwner": "请选择负责人"
 }

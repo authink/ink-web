@@ -55,9 +55,7 @@ export default function Apps() {
     { name: 'createdAt', type: 'datetime' },
     { name: 'updatedAt', type: 'datetime' },
   ])
-  const { trigger: addApp, isMutating: isAdding } = useMutation({
-    path,
-  })
+  const { trigger: addApp, isMutating: isAdding } = useMutation({ path })
   const { trigger: updateApp, isMutating } = useMutation({
     path,
     method: http.PUT,

@@ -21,7 +21,11 @@
   "delete": "Delete",
   "confirmDelete": "Are you sure to delete?",
   "deleteSucceed": "Deleted successfully",
+  "saveSucceed": "Saved successfully",
   "new": "New",
   "edit": "Edit",
-  "basicInfo": "Basic Information"
+  "save": "Save",
+  "basicInfo": "Basic Information",
+  "none": "None",
+  "valueExist": "Already exist"
 }
