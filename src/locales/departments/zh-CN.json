@@ -6,5 +6,6 @@
   "newDeptName": "新建部门",
   "invalidName": "请输入名称",
   "invalidNameLen": "名称至少是2个字符",
-  "invalidOwner": "请选择负责人"
+  "invalidOwner": "请选择负责人",
+  "newSubDept": "子部门"
 }

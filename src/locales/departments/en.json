@@ -6,5 +6,6 @@
   "newDeptName": "New Department",
   "invalidName": "Please input name",
   "invalidNameLen": "Name must be at least 2 characters long",
-  "invalidOwner": "Please select owner"
+  "invalidOwner": "Please select owner",
+  "newSubDept": "Sub-dept"
 }
